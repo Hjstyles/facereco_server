@@ -2,6 +2,10 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8.11.x",
+    
+  },
   "main": "scripts.js",
   "scripts": {
     "start": "nodemon server.js"
