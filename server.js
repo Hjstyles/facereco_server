@@ -7,10 +7,9 @@ const knex = require('knex')
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : '12345678',
-    database : 'attend'
+    connectionString : process.env.DATABASE_URL,
+    SSL : true,
+    
   }
 });
 
@@ -20,7 +19,7 @@ app.use(cors())
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> {
-  res.send('app is running on port 3000');
+  res.send('it is working');
 })
 
 app.post('/signin', (req, res) => {
@@ -97,5 +96,6 @@ app.put('/image', (req, res) => {
 app.listen(process.env.PORT || 3000, ()=> {
   console.log('app is running on port 3000');
 })
+
 
 
