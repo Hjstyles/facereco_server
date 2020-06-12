@@ -20,7 +20,7 @@ app.use(cors())
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> {
-  res.send(database.users);
+  res.send('app is running on port 3000');
 })
 
 app.post('/signin', (req, res) => {
